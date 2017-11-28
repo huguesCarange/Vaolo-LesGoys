@@ -9,8 +9,8 @@ RUN apt-get update &&  \
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.1/install.sh | bash && \
     export NVM_DIR="$HOME/.nvm" && \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
-    nvm install stable  && \
-    npm install -g npm && \ 
+    nvm install v8.9.0 && \
+    npm install -g npm && \
     npm install -g cordova ionic && \
     ionic start MonApp blank --no-interactive && \
     cd MonApp && \
