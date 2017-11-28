@@ -12,6 +12,7 @@ module.exports = config => config.set({
   files: [
     'test/*.js'
   ],
+  failOnEmptyTestSuite : false,
   // This example uses mocha and chai, but we could use something else, jasmine for example
   frameworks: ['mocha', 'chai'],
   plugins: [

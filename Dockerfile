@@ -33,7 +33,8 @@ RUN cd /home/ionic-unit-testing-example && \
     export NVM_DIR="$HOME/.nvm" && \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
     npm install node-sass && \
-    npm install
+    npm install && \
+    npm run test
 
 
 EXPOSE 8100
