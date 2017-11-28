@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  jenkins:
+    image: huguescarange/lesgoys-vaolo-dockerjenkins
+    container_name: lesgoys_jenkins
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ~/tmp/jenkins/jenkins_home:/var/jenkins_home
+      
+  test:
+    image: huguescarange/lesgoys-vaolo-dockertest:test
+    container_name: lesgoys_test
