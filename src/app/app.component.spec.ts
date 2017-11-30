@@ -5,11 +5,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MyApp } from './app.component';
-import {
-  PlatformMock,
-  StatusBarMock,
-  SplashScreenMock
-} from '../../test-config/mocks-ionic';
+import { PlatformMock } from '../../test-config/mocks-ionic';
 
 describe('MyApp Component', () => {
   let fixture;
@@ -22,8 +18,8 @@ describe('MyApp Component', () => {
         IonicModule.forRoot(MyApp)
       ],
       providers: [
-        { provide: StatusBar, useClass: StatusBarMock },
-        { provide: SplashScreen, useClass: SplashScreenMock },
+        StatusBar,
+        SplashScreen,
         { provide: Platform, useClass: PlatformMock }
       ]
     })
@@ -34,11 +30,11 @@ describe('MyApp Component', () => {
     component = fixture.componentInstance;
   });
 
-  it('should be created', () => {
+  it ('should be created', () => {
     expect(component instanceof MyApp).toBe(true);
   });
 
-  it('should have two pages', () => {
+  it ('should have two pages', () => {
     expect(component.pages.length).toBe(2);
   });
 
