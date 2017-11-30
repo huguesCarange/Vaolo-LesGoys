@@ -22,14 +22,8 @@ RUN apt-get update && apt-get install -y google-chrome-stable
 
 RUN cd /home && \
     git clone https://github.com/huguesCarange/Vaolo-LesGoys.git && \
-    cd ionic-unit-testing-example && \
-    git checkout ionic-v2-branch
-    
-COPY ./karma.conf.js /home/ionic-unit-testing-example/test-config/
-
-COPY ./package.json /home/ionic-unit-testing-example/
-
-RUN cd /home/ionic-unit-testing-example && \
+    cd /home/Vaolo-LesGoys && \
+    git checkout test && \
     export NVM_DIR="$HOME/.nvm" && \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
     npm install node-sass && \
