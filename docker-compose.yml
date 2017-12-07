@@ -1,12 +1,11 @@
 version: '2'
 
 services:
-  jenkins:
+   jenkins:
     image: huguescarange/lesgoys-vaolo-dockerjenkins
     container_name: lesgoys_jenkins
-    restart: always
     ports:
-      - 8080:5080
+      - 8080:8080
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/tmp/jenkins/jenkins_home:/var/jenkins_home
@@ -15,9 +14,10 @@ services:
     container_name: lesgoys_staging
     restart: always
     ports:
-      - 8100:5100
+      - 8100:8100
    karma:
     image: huguescarange/lesgoys-vaolo-dockertest
     container_name: lesgoys_test
     ports:
-      - 8086:5086
+      - 8086:8086
+
