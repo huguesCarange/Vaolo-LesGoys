@@ -9,13 +9,19 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ~/tmp/jenkins/jenkins_home:/var/jenkins_home
-   ionic:
+   staging:
     image: huguescarange/lesgoys-vaolo-dockerstaging
     container_name: lesgoys_staging
     restart: always
     ports:
       - 8100:8100
-   karma:
+   prod:
+    image: huguescarange/lesgoys-vaolo-dockerstaging
+    container_name: lesgoys_prod
+    restart: always
+    ports:
+      - 8100:8088
+   test:
     image: huguescarange/lesgoys-vaolo-dockertest
     container_name: lesgoys_test
     ports:
