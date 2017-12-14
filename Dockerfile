@@ -23,6 +23,6 @@ CMD export NVM_DIR="$HOME/.nvm" && \
     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && \
     cd Vaolo-LesGoys; \
     nvm use v8.9.0 && \
-    ionic serve --no-interactive
+    ionic serve -p 8101 --no-interactive
     
-EXPOSE 8100
+EXPOSE 8101
