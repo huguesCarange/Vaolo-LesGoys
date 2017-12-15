@@ -16,11 +16,11 @@ services:
     ports:
       - 8100:8100
    prod:
-    image: huguescarange/lesgoys-vaolo-dockerstaging
+    image: huguescarange/lesgoys-vaolo-dockerprod
     container_name: lesgoys_prod
     restart: always
     ports:
-      - 8100:8088
+      - 8101:8101
    test:
     image: huguescarange/lesgoys-vaolo-dockertest
     container_name: lesgoys_test
